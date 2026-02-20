@@ -17,8 +17,7 @@ fn build_min_pdf(path: &std::path::Path) -> Result<()> {
     pages.set("Type", "Pages");
     pages.set("Kids", vec![Object::Reference(page_id)]);
     pages.set("Count", 1);
-    doc.objects
-        .insert(pages_id, Object::Dictionary(pages));
+    doc.objects.insert(pages_id, Object::Dictionary(pages));
 
     let mut page = Dictionary::new();
     page.set("Type", "Page");
@@ -30,8 +29,7 @@ fn build_min_pdf(path: &std::path::Path) -> Result<()> {
     let mut catalog = Dictionary::new();
     catalog.set("Type", "Catalog");
     catalog.set("Pages", Object::Reference(pages_id));
-    doc.objects
-        .insert(catalog_id, Object::Dictionary(catalog));
+    doc.objects.insert(catalog_id, Object::Dictionary(catalog));
 
     doc.trailer.set("Root", Object::Reference(catalog_id));
 
