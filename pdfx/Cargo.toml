@@ -1,0 +1,12 @@
+[package]
+name = "pdfx"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+lopdf.workspace = true
+pdfx-lib = { path = "../pdfx-lib" }

@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+  "pdfx",
+  "pdfx-lib",
+]
+
+[workspace.package]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/RaphOrg/PDF-Toolkit-CLI"
+
+[workspace.dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+lopdf = { version = "0.34", default-features = true }
+thiserror = "2"
+tempfile = "3"
